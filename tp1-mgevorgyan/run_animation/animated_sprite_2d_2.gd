@@ -1,0 +1,1 @@
+ds AnimatedSprite2D

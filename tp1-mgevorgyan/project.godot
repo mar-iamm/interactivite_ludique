@@ -11,5 +11,5 @@ config_version=5
 [application]
 
 config/name="tp1-mgevorgyan"
+run/main_scene="res://run_animation/main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"

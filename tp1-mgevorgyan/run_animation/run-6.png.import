@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chacyerlf43p7"
-path="res://.godot/imported/pigeon.png-52522062fee130c5c81ab833e5fd0415.ctex"
+uid="uid://dva1hugnj54nd"
+path="res://.godot/imported/run-6.png-b9b07e150edf534628b0bbb5f94fe3ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pigeon.png"
-dest_files=["res://.godot/imported/pigeon.png-52522062fee130c5c81ab833e5fd0415.ctex"]
+source_file="res://run_animation/run-6.png"
+dest_files=["res://.godot/imported/run-6.png-b9b07e150edf534628b0bbb5f94fe3ef.ctex"]
 
 [params]
 

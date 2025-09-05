@@ -1,0 +1,128 @@
+[gd_scene load_steps=15 format=3 uid="uid://b8c6c6sox55e"]
+
+[ext_resource type="Texture2D" uid="uid://ivmmdns14wt" path="res://background_park.jpg" id="1_3r4x6"]
+[ext_resource type="Script" uid="uid://dbtry0eegckvw" path="res://run_animation/main.gd" id="1_gm50g"]
+[ext_resource type="Texture2D" uid="uid://ck10w0hp7p3cr" path="res://run_animation/run-1.png" id="2_gm50g"]
+[ext_resource type="Texture2D" uid="uid://cjtafnduy4s6o" path="res://run_animation/run-2.png" id="3_k0tsp"]
+[ext_resource type="Texture2D" uid="uid://bal4sx2exgqok" path="res://run_animation/run-3.png" id="4_7clif"]
+[ext_resource type="Texture2D" uid="uid://7612pd20uq26" path="res://run_animation/run-4.png" id="5_clxu4"]
+[ext_resource type="Texture2D" uid="uid://bh8dcla6pded8" path="res://run_animation/run-5.png" id="6_8xbhd"]
+[ext_resource type="Texture2D" uid="uid://dva1hugnj54nd" path="res://run_animation/run-6.png" id="7_8fqm2"]
+[ext_resource type="Texture2D" uid="uid://bx4ydvbf68uf1" path="res://run_animation/run-7.png" id="8_yeecd"]
+[ext_resource type="Texture2D" uid="uid://dpxbmy8vv1gi7" path="res://run_animation/run-8.png" id="9_kb8ec"]
+[ext_resource type="AudioStream" uid="uid://dj6uob7snhqpj" path="res://run_animation/run_sound.mp3" id="11_k0tsp"]
+[ext_resource type="Script" uid="uid://dy5vij05sn8yn" path="res://run_animation/audio_stream_player_2d.gd" id="12_7clif"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0tsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gm50g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0tsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7clif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_clxu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8xbhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8fqm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yeecd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kb8ec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7clif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gm50g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0tsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7clif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_clxu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8xbhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8fqm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yeecd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kb8ec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gm50g")
+
+[node name="BackgroundPark" type="Sprite2D" parent="."]
+position = Vector2(576, 314)
+scale = Vector2(1.85252, 1.85252)
+texture = ExtResource("1_3r4x6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(396.14, 433.375)
+scale = Vector2(2.96642, 2.96642)
+sprite_frames = SubResource("SpriteFrames_k0tsp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+position = Vector2(90.2975, 2.90753)
+scale = Vector2(0.943396, 0.943396)
+stream = ExtResource("11_k0tsp")
+script = ExtResource("12_7clif")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 312.0
+offset_top = 373.0
+offset_right = 473.0
+offset_bottom = 530.0
+toggle_mode = true
+
+[node name="AnimatedSprite2D_2" type="AnimatedSprite2D" parent="."]
+position = Vector2(664, 442)
+scale = Vector2(2.79851, 2.79851)
+sprite_frames = SubResource("SpriteFrames_7clif")
+frame = 5
+frame_progress = 0.196499
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="AnimatedSprite2D_2"]
+position = Vector2(-95.7153, -3.08199)
+scale = Vector2(1.06, 1.06)
+stream = ExtResource("11_k0tsp")
+script = ExtResource("12_7clif")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 573.0
+offset_top = 381.0
+offset_right = 732.0
+offset_bottom = 535.0
+toggle_mode = true
+
+[connection signal="finished" from="AnimatedSprite2D/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]
+[connection signal="toggled" from="TextureButton2" to="." method="_on_texture_button_2_toggled"]
